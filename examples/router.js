@@ -6,6 +6,7 @@ import FormEditorObjListView from './views/formEditor/objList.vue'
 import FormEditorObjEditView from './views/formEditor/objEdit.vue'
 import FormEditorActionEditView from './views/formEditor/actionEdit.vue'
 import FormEditorActionListView from './views/formEditor/actionList.vue'
+import BlockRoute from './views/BlockRoute.vue'
 const routes = [
   {
     path: '/',
@@ -25,9 +26,7 @@ const routes = [
   },
   {
     path: '/formEditor/object',
-    component: {
-      template: '<router-view></router-view>'
-    },
+    component: BlockRoute,
     children: [
       {
         name: 'objList',
