@@ -21,7 +21,9 @@ export default defineComponent({
       setSelection('root')
     }
     const renderContent = () => {
-      const TagComponent = resolveComponent(unref(isPc) ? 'el-form' : 'van-form')
+      // 仅显示 element-plus 即可
+      // const TagComponent = resolveComponent(unref(isPc) ? 'el-form' : 'van-form')
+      const TagComponent = resolveComponent('el-form')
       const typeProps = hooks.useProps(state, state, unref(isPc), true)
       const Layout = (<LayoutDragGable data-layout-type={'root'} class={[unref(isEditModel) && ns.e('wrap')]} data={state.store} parent={state.store} isRoot></LayoutDragGable>)
       return (

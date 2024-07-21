@@ -192,13 +192,15 @@ export const useProps = (state, data, isPc = true, isRoot = false, specialHandli
     let node = isRoot ? data.config : data
     let result = {}
     const platform = isPc ? 'pc' : 'mobile'
+    // const platform = 'pc'
     if (isRoot) {
       if (isPc) {
         result.model = data.store
         result.size = node.pc.size
         result.labelPosition = node[platform].labelPosition
       } else {
-        result.labelAlign = node[platform].labelPosition
+        // result.labelAlign = node[platform].labelPosition
+        result.labelPosition = node[platform].labelPosition
       }
       return result
     }
