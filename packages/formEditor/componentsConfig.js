@@ -288,7 +288,8 @@ export const fieldsConfig = [
           isShowLabel: true,
           disabled: false,
           clearable: true,
-          required: false
+          required: false,
+          renderType: 2
         }
       },
       {

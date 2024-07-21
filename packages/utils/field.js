@@ -196,7 +196,19 @@ const syncWidthByPlatform = (node, platform, syncFullplatform = false, value) =>
     }
   })
 }
-const transferLabelPath = (node) => `er.fields.${node.type === 'input' ? `${node.type}.${node.options.renderType - 1}` : `${node.type}`}`
+const transferLabelPath = (node) => {
+  const inputTypeFlag = node.type === 'input' // input框
+  const selectTypeFlag = node.type === 'select' // select框
+  // const cascaderTypeFlag = node.type === 'cascader' // cascader
+  let defaultFields = ''
+  if (inputTypeFlag || selectTypeFlag /* || cascaderTypeFlag */) {
+    defaultFields = `${node.type}.${node.options.renderType - 1}`
+  } else {
+    defaultFields = `${node.type}`
+  }
+  return `er.fields.${defaultFields}`
+}
+
 const fieldLabel = (t, node) => t(transferLabelPath(node))
 const transferData = (lang, path, locale, options = {}) => {
   let result = ''
