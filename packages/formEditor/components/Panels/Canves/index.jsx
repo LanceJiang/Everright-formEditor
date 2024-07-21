@@ -8,7 +8,7 @@ export default defineComponent({
   name: 'Canves',
   inheritAttrs: false,
   customOptions: {},
-  setup () {
+  setup (props, { expose }) {
     const ER = inject('Everright')
     const ns = hooks.useNamespace('Canves')
     const {
@@ -20,6 +20,14 @@ export default defineComponent({
     const handleClick = (e) => {
       setSelection('root')
     }
+    // 拿到子组件的表单实例
+    const getFormValidateRef = () => {
+      return form.value
+    }
+
+    expose({
+      getFormValidateRef
+    })
     const renderContent = () => {
       const TagComponent = resolveComponent(unref(isPc) ? 'el-form' : 'van-form')
       const typeProps = hooks.useProps(state, state, unref(isPc), true)

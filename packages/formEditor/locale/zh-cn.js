@@ -15,7 +15,8 @@ export default {
       number: '数字',
       radio: '单选框',
       checkbox: '复选框',
-      select: '下拉框',
+      select: ['下拉框', '人员', '角色', '部门'],
+      // select: '下拉框',
       time: '时间',
       date: '日期',
       rate: '评分',
@@ -216,6 +217,7 @@ export default {
       http: '请输入正确的网址',
       fileSize: '文件大小不能超过 <%= size %> MB',
       idUnique: '字段标识重复',
+      chartAndNumber: '字母数字组合',
       placeholder1: '请输入',
       placeholder2: '请选择',
       placeholder3: '请输入补充信息'

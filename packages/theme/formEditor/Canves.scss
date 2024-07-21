@@ -6,6 +6,7 @@
   }
   .el-form-item {
     align-items: start;
+    //align-items: flex-start;
   }
   @include e(editModel) {
     height: calc(100% - 40px);

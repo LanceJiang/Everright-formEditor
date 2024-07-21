@@ -17,6 +17,18 @@ export default {
 }
 </script>
 <script setup>
+// 部门 用户 角色相关接口...
+/*
+import { ls } from '@/utils/index'
+import user from '@/api/system/user'
+import role from '@/api/system/role'
+import department from '@/api/system/department'
+
+const token = ls.get('token')
+const userOptList = ref([])
+const roleOptList = ref([])
+const departmentOptList = ref([])
+*/
 const emit = defineEmits(['listener'])
 const props = defineProps(_.merge({
   fieldsPanelWidth: {
@@ -90,6 +102,13 @@ state.validator = (target, fn) => {
       _.find(state.validateStates, { data: { key: target.key } }).isWarning = true
       fn && fn(0)
       return false
+    } else {
+      const regex = /^[A-Za-z0-9]+$/g // 字母+数字
+      if (!newValue.match(regex)) {
+        _.find(state.validateStates, { data: { key: target.key } }).isWarning = true
+        fn && fn(3)
+        return false
+      }
     }
     state.validateStates.forEach(e => {
       if (count[e.data.key] > 1) {
@@ -172,6 +191,17 @@ const delField = (node) => {
 }
 const addFieldData = (node, isCopy = false) => {
   if (/^(radio|cascader|checkbox|select)$/.test(node.type)) {
+    /* if (node.type === 'select') {
+  if (node.options.renderType === 2) {
+    node.options.options = userOptList.value
+  }
+  if (node.options.renderType === 3) {
+    node.options.options = roleOptList.value
+  }
+  if (node.options.renderType === 4) {
+    node.options.options = departmentOptList.value
+  }
+} */
     if (isCopy) {
       state.data[node.id] = _.cloneDeep(state.data[node.options.dataKey])
       node.options.dataKey = node.id
@@ -189,6 +219,7 @@ const addFieldData = (node, isCopy = false) => {
     }
   }
   if (/^(uploadfile|signature|html)$/.test(node.type)) {
+    // todo...
     node.options.action = props.fileUploadURI
   }
 }

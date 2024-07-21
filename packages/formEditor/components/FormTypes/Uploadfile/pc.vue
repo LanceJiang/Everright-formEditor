@@ -22,6 +22,7 @@ watch(fileList, (arr) => {
   const list = unref(fileList).map(e => {
     let result = {}
     if (e.response) {
+      // 待优化处理 todo...
       result = e.response.data[0]
     } else {
       result = _.pick(e, ['name', 'url'])
@@ -48,6 +49,7 @@ watch(() => props.data.options.defaultValue, (arr) => {
   deep: true
 })
 const handlePictureCardPreview = (uploadFile) => {
+  // 待优化处理 todo...
   const url = uploadFile.response ? uploadFile.response.data[0].url : uploadFile.url
   dialogImageUrl.value = props.data.options.defaultValue.map(e => e.url).indexOf(url)
   dialogVisible.value = true

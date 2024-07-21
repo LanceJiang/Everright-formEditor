@@ -15,7 +15,8 @@ export default {
       number: 'Number',
       radio: 'Radio',
       checkbox: 'Checkbox',
-      select: 'Select',
+      select: ['Select', 'Employee', 'Role', 'Department'],
+      // select: 'Select',
       time: 'Time',
       date: 'Date',
       rate: 'Rate',
@@ -216,6 +217,7 @@ export default {
       http: 'Please enter the valid Url',
       fileSize: 'File size cannot exceed <%= size %> MB',
       idUnique: 'ID must be unique',
+      chartAndNumber: 'Only characters and Numbers',
       placeholder1: 'Please enter',
       placeholder2: 'Please select',
       placeholder3: 'Please enter additional information'

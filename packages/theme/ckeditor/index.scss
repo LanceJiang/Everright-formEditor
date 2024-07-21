@@ -15,7 +15,7 @@ $namespace: 'Everright-ckeditor';
     }
   }
   @include e(container) {
-    overflow-y: scroll;
+    //overflow-y: scroll;
     .ck-content {
       height: 300px;
       padding: 10px;

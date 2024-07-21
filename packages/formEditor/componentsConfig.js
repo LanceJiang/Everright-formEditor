@@ -110,6 +110,66 @@ export const fieldsConfig = [
           isShowLabel: true,
           required: false
         }
+      },
+      {
+        type: 'select',
+        label: '员工',
+        icon: 'employee',
+        key: '',
+        id: '',
+        options: {
+          dataKey: '',
+          filterable: true,
+          multiple: false,
+          defaultValue: '',
+          placeholder: '',
+          labelWidth: 100,
+          isShowLabel: true,
+          disabled: false,
+          clearable: true,
+          required: false,
+          renderType: 2
+        }
+      },
+      {
+        type: 'select',
+        label: '角色',
+        icon: 'dropdown0',
+        key: '',
+        id: '',
+        options: {
+          dataKey: '',
+          filterable: true,
+          multiple: false,
+          defaultValue: '',
+          placeholder: '',
+          labelWidth: 100,
+          isShowLabel: true,
+          disabled: false,
+          clearable: true,
+          required: false,
+          renderType: 3
+        }
+      },
+      {
+        type: 'select',
+        label: '部门',
+        icon: 'dropdown0',
+        key: '',
+        id: '',
+        options: {
+          dataKey: '',
+          filterable: true,
+          multiple: false,
+          defaultValue: '',
+          placeholder: '',
+          labelWidth: 100,
+          isShowLabel: true,
+          disabled: false,
+          clearable: true,
+          required: false,
+          renderType: 4
+        }
       }
     ]
   },

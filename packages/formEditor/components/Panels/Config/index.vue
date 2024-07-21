@@ -51,13 +51,19 @@ const validator = (rule, value, callback) => {
   const fn = (type) => {
     switch (type) {
       case 0:
+        // 字段必填 校验
         callback(new Error(t('er.validateMsg.required')))
         break
       case 1:
         callback()
         break
       case 2:
+        // 字段标识唯一 校验
         callback(new Error(t('er.validateMsg.idUnique')))
+        break
+      case 3:
+        // 数字+字母组合 校验
+        callback(new Error(t('er.validateMsg.chartAndNumber')))
         break
     }
   }

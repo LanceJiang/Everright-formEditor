@@ -19,7 +19,8 @@ const wrapElement = (element, fn) => {
       node.id = nanoid()
     }
     if (!node.key) {
-      node.key = `${node.type}_${node.id}`
+      // node.key = `${node.type}_${node.id}`
+      node.key = `${node.type}${node.id}`
     }
     if (/^(grid|tabs|collapse|table|divider)$/.test(node.type)) {
       node.style = {

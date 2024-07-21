@@ -97,6 +97,7 @@ export default defineComponent({
       isPc,
       setSelection
     } = hooks.useTarget()
+    console.log(state, 'state=======')
     const handleMove = (e) => {
       return true
     }

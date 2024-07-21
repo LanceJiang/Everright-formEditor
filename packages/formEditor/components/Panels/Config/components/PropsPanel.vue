@@ -551,6 +551,19 @@ onMounted(() => {
       <template v-else-if="checkTypeBySelected(['subform'], 'defaultValue')">
         <PanelsConfigComponentsSubformDefaultValue/>
       </template>
+      <template v-else-if="checkTypeBySelected(['select'], 'defaultValue') && [2, 3, 4].indexOf(target.options.renderType) > -1 ">
+        <el-select
+          v-model="target.options.defaultValue"
+          :class="[utils.addTestId('configPanel-defaultValue', 'id')]"
+          v-bind="typeProps">
+          <el-option
+            v-for="item in typeProps.options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </template>
     </PanelsConfigComponentsTypeComponent>
     <PanelsConfigComponentsTypeComponent
       :label="t('er.public.Data')"

@@ -34,6 +34,7 @@ const state = reactive({
   remoteValues: new Map(),
   othersFiles: {}
 })
+const CanvesPanelRef = ref()
 const ns = hooks.useNamespace('Main', state.Namespace)
 hooks.useLogic(state)
 const getData = () => {
@@ -134,15 +135,22 @@ const setData1 = async (data, value) => {
   }
 }
 const setData = props.layoutType === 1 ? setData1 : setData2
+
+// 获取整个表单的校验方式
+const getSelfFormRef = () => {
+  return CanvesPanelRef.value.getFormValidateRef()
+}
+
 defineExpose({
   switchPlatform (platform) {
     state.platform = platform
   },
   setData,
   getData,
-  form
+  form,
+  getSelfFormRef
 })
 </script>
 <template>
-  <CanvesPanel v-if="state.store.length"></CanvesPanel>
+  <CanvesPanel v-if="state.store.length" ref="CanvesPanelRef"></CanvesPanel>
 </template>

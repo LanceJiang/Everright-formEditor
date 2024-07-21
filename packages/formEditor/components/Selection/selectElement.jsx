@@ -329,8 +329,10 @@ export default {
                     handleAction(2)
                   }, ['stop'])} icon="copy"></Icon>)
                 }
+                {/* 拖拽 宽度 */}
                 {isShowWidthScale.value && (
                   <div ref={widthScaleElement}><Icon class={[ns.e('widthScale')]} icon="dragWidth"></Icon></div>)}
+                {/* 插入 */}
                 {props.hasTableCellOperator && renderTableCellOperator()}
               </div>
             )
